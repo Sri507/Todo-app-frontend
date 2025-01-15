@@ -1,0 +1,411 @@
+:root {
+  --bright-blue: hsl(220, 98%, 61%);
+  --check-background: linear-gradient(
+    to right,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+  /*light*/
+  --l-very-light-gray: hsl(0, 0%, 98%);
+  --l-very-light-grayish-blue: hsl(236, 33%, 92%);
+  --l-light-grayish-blue: hsl(233, 11%, 84%);
+  --l-dark-grayish-blue: hsl(236, 9%, 61%);
+  --l-very-dark-grayish-blue: hsl(235, 19%, 35%);
+  /*dark*/
+  --d-very-dark-blue: hsl(235, 21%, 11%);
+  --d-very-dark-desaturated-blue: hsl(235, 24%, 19%);
+  --d-light-grayish-blue: hsl(234, 39%, 85%);
+  --d-light-grayish-blue-hover: hsl(236, 33%, 92%);
+  --d-dark-grayish-blue: hsl(234, 11%, 52%);
+  --d-very-dark-grayish-blue: hsl(233, 14%, 35%);
+  --d-very-dark-grayish-blue2: hsl(237, 14%, 26%);
+  --fs: 18px;
+  --ff: "Josefin Sans", serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+main {
+  min-height: 100svh;
+  font-family: var(--ff);
+  font-size: 0.725rem;
+  font-weight: 400;
+  background: var(--l-very-light-grayish-blue);
+}
+.create-task {
+  position: relative;
+  background: url(./images/bg-mobile-light.jpg) no-repeat;
+  height: 200px;
+  padding: 0 24px;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+.create-task .head-star {
+  padding-top: 48px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 32px;
+}
+.create-task .head-star .todo-head {
+  font-size: 1.5rem;
+  font-weight: 700;
+  width: fit-content;
+  color: var(--l-very-light-gray);
+  letter-spacing: 14px;
+}
+.create-task .head-star .starT {
+  background: url(./images/icon-moon.svg) no-repeat;
+  background-size: contain;
+  width: 20px;
+  cursor: pointer;
+  height: 20px;
+}
+.create-task .check-task {
+  display: flex;
+  align-items: center;
+  background: var(--l-very-light-gray);
+  height: 48px;
+  border-radius: 5px;
+}
+.create-task .check-task .check-empty {
+  width: 17%;
+  padding-left: 10px;
+}
+.create-task .check-task .check-empty .checkE {
+  border: 1px solid var(--l-very-light-grayish-blue);
+  border-radius: 50%;
+  background: var(--l-very-light-gray), url(./images/icon-check.svg) no-repeat;
+  background-position: 50% 50%;
+  background-size: 11px 9px;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+}
+.create-task .check-task .task-cover {
+  width: 83%;
+}
+.create-task .check-task .task-cover .task {
+  width: 100%;
+  font-family: var(--ff);
+  border: none;
+  caret-color: var(--bright-blue);
+  font-size: var(--fs);
+}
+.create-task .check-task .task-cover .task:focus {
+  outline: none;
+}
+.create-task .check-task .task-cover .task::placeholder {
+  color: var(--l-dark-grayish-blue);
+  font-weight: 400;
+  opacity: 0.9;
+  font-size: 12px;
+}
+.container {
+  position: relative;
+  top: -1.7rem;
+  margin: 0 auto;
+  width: 327px;
+}
+
+.container .task-total {
+  background: var(--l-very-light-gray);
+  border-radius: 5px;
+}
+.task-container .todo-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--l-light-grayish-blue);
+}
+.task-container .todo-wrapper .check-task {
+  display: flex;
+  align-items: center;
+}
+.task-container .todo-wrapper .check-task .checkT {
+  border: 1px solid var(--l-light-grayish-blue);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+
+  margin-right: 12px;
+}
+.task-container .todo-wrapper .check-task .checkT:hover {
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%))
+      border-box;
+}
+.task-container .todo-wrapper .check-task .checkT.checked {
+  background: url(./images/icon-check.svg) no-repeat,
+    linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-position: 50% 50%;
+}
+.task-container .todo-wrapper .check-task .checkT.checked + .todo-task {
+  text-decoration: line-through;
+  color: var(--l-light-grayish-blue);
+}
+.task-container .todo-wrapper .check-task .todo-task {
+  color: var(--l-very-dark-grayish-blue);
+}
+.task-container .todo-wrapper .check-task .todo-task:hover {
+  cursor: pointer;
+}
+.task-container .todo-wrapper .deleteT {
+  background: url(./images/icon-cross.svg) no-repeat;
+  background-size: contain;
+  width: 14px;
+  height: 14px;
+}
+.task-container .todo-wrapper .deleteT:hover {
+  cursor: pointer;
+}
+.container .task-total .total-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  color: var(--l-dark-grayish-blue);
+}
+.container .all-active {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 16px 64px;
+  background: var(--l-very-light-gray);
+  color: var(--l-dark-grayish-blue);
+  border-radius: 5px;
+  font-weight: 700;
+}
+.container .drag {
+  margin-top: 44px;
+  text-align: center;
+  color: var(--l-dark-grayish-blue);
+}
+.clearC:hover,
+.allT:hover,
+.activeT:hover,
+.completedT:hover {
+  cursor: pointer;
+}
+.activeT.selected,
+.allT.selected,
+.completedT.selected {
+  color: var(--bright-blue);
+}
+
+/* dark */
+main:has(.container.dark) {
+  background: var(--d-very-dark-blue);
+}
+.create-task.dark {
+  background: url(./images/bg-mobile-dark.jpg) no-repeat;
+}
+.create-task.dark .head-star .starT {
+  background: url(./images/icon-sun.svg) no-repeat;
+  background-size: contain;
+  width: 20px;
+  cursor: pointer;
+  height: 20px;
+}
+.create-task.dark .check-task {
+  background: var(--d-very-dark-desaturated-blue);
+}
+.create-task.dark .check-task .check-empty .checkE {
+  border: 1px solid var(--d-very-dark-grayish-blue2);
+  border-radius: 50%;
+  background: var(--d-very-dark-desaturated-blue),
+    url(./images/icon-check.svg) no-repeat;
+}
+.create-task.dark .check-task .task-cover .task {
+  background: var(--d-very-dark-desaturated-blue);
+  color: var(--d-light-grayish-blue);
+}
+.create-task.dark .check-task .task-cover .task::placeholder {
+  color: var(--d-dark-grayish-blue);
+  font-weight: 400;
+  opacity: 0.9;
+  font-size: 12px;
+}
+.container.dark .task-total {
+  background: var(--d-very-dark-desaturated-blue);
+}
+.task-container.dark .todo-wrapper {
+  border-bottom: 1px solid var(--d-very-dark-grayish-blue2);
+}
+.task-container.dark .todo-wrapper .check-task .checkT {
+  border: 1px solid var(--d-very-dark-grayish-blue2);
+}
+.task-container.dark .todo-wrapper .check-task .checkT:hover {
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: linear-gradient(
+        var(--d-very-dark-desaturated-blue),
+        var(--d-very-dark-desaturated-blue)
+      )
+      padding-box,
+    linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%))
+      border-box;
+}
+.task-container.dark .todo-wrapper .check-task .checkT.checked {
+  background: url(./images/icon-check.svg) no-repeat,
+    linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-position: 50% 50%;
+}
+.task-container.dark .todo-wrapper .check-task .checkT.checked + .todo-task {
+  color: var(--d-very-dark-grayish-blue);
+}
+.task-container.dark .todo-wrapper .check-task .todo-task {
+  color: var(--d-light-grayish-blue);
+}
+.container.dark .task-total .total-wrapper {
+  color: var(--d-very-dark-grayish-blue);
+}
+.container.dark .all-active {
+  background: var(--d-very-dark-desaturated-blue);
+  color: var(--d-very-dark-grayish-blue);
+}
+.container.dark .drag {
+  color: var(--d-very-dark-grayish-blue);
+}
+.total-active {
+  display: none;
+}
+@media (min-width: 376px) {
+  .create-task {
+    background: url(./images/bg-desktop-light.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .create-task .head-star {
+    width: 327px;
+  }
+  .create-task .check-task {
+    width: 327px;
+  }
+  .create-task.dark {
+    background: url(./images/bg-desktop-dark.jpg) no-repeat;
+    background-size: cover;
+  }
+}
+@media (min-width: 600px) {
+  main {
+    font-size: var(--fs);
+  }
+  .create-task {
+    height: 300px;
+  }
+  .create-task .head-star {
+    padding-top: 76px;
+    padding-bottom: 44px;
+  }
+  .create-task .head-star,
+  .create-task .check-task {
+    width: 540px;
+  }
+  .create-task .head-star .todo-head {
+    font-size: 2.2rem;
+    letter-spacing: 18px;
+  }
+  .create-task .head-star .starT {
+    height: 30px;
+    width: 30px;
+  }
+  .create-task.dark .head-star .starT {
+    height: 30px;
+    width: 30px;
+  }
+  .create-task .check-task {
+    height: 62px;
+  }
+  .create-task .check-task .check-empty {
+    width: 14%;
+    padding-left: 0px;
+  }
+  .create-task .check-task .check-empty .checkE {
+    width: 27px;
+    height: 27px;
+  }
+  .create-task .check-task .task-cover {
+    width: 86%;
+  }
+  .create-task .check-task .task-cover .task::placeholder {
+    font-size: var(--fs);
+  }
+  .container {
+    top: -3.5rem;
+    width: 540px;
+  }
+  .task-container .todo-wrapper {
+    padding: 20px 24px;
+  }
+  .task-container .todo-wrapper .check-task .checkT {
+    width: 27px;
+    height: 27px;
+    margin-right: 24px;
+  }
+  .task-container .todo-wrapper .deleteT,
+  .container .task-total .total-wrapper,
+  .container .all-active {
+    display: none;
+  }
+  .task-container .todo-wrapper:hover .deleteT {
+    display: block;
+    height: 18px;
+    width: 18px;
+  }
+  .total-active {
+    font-size: 0.875rem;
+    background: var(--l-very-light-gray);
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--l-dark-grayish-blue);
+    border-radius: 0 0 5px 5px;
+  }
+  .total-active .all-active-complete {
+    margin-left: 4rem;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+  }
+  .all-active-complete > div {
+    padding: 0 9px;
+  }
+  .container .drag {
+    margin-top: 50px;
+  }
+  .create-task.dark .check-task .task-cover .task::placeholder {
+    font-size: var(--fs);
+  }
+  .container.dark .task-total .total-active {
+    background: var(--d-very-dark-desaturated-blue);
+    color: var(--d-very-dark-grayish-blue);
+  }
+}
+@media (min-width: 1440px) {
+  .create-task {
+    background: url(./images/bg-desktop-light.jpg) no-repeat;
+    background-size: 100% 100%;
+  }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+  <body>
+    <main role="main">
+      <div class="create-task">
+        <div class="head-star">
+          <h1 class="todo-head">TODO</h1>
+          <div class="starT"></div>
+        </div>
+        <div class="check-task">
+          <div class="check-empty">
+            <div class="checkE"></div>
+          </div>
+          <div class="task-cover">
+            <input
+              type="text"
+              id="input"
+              class="task"
+              placeholder="Create a new todo..."
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="task-total">
+          <div class="task-container" id="dragList" class="drag-list"></div>
+          <div class="total-wrapper">
+            <div class="total">1 items left</div>
+            <div class="clearC">Clear Completed</div>
+          </div>
+          <div class="total-active">
+            <div class="total">1 items left</div>
+            <div class="all-active-complete">
+              <div class="allT selected">All</div>
+              <div class="activeT">Active</div>
+              <div class="completedT">Completed</div>
+            </div>
+            <div class="clearC">Clear Completed</div>
+          </div>
+        </div>
+        <div class="all-active">
+          <div class="allT selected">All</div>
+          <div class="activeT">Active</div>
+          <div class="completedT">Completed</div>
+        </div>
+
+        <!-- Add dynamic number -->
+        <p class="drag">Drag and drop to reorder list</p>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- <div class="todo-wrapper" draggable="true">
+  <div class="check-task">
+    <div class="checkT"></div>
+    <div class="todo-task">Complete online JavaScript course</div>
+  </div>
+  <div class="deleteT deleteC"></div>
+</div>
+ -->
